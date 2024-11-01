@@ -1,0 +1,11 @@
+﻿@model ResumeManager.Models.Anthonia_PhotohDto
+@{
+    ViewData["Title"] = "Details";
+}
+<link rel="stylesheet" href="~/css/photo.css" asp-append-version="true" />
+
+
+<h2>@Model.Title</h2>
+<img src="@Url.Action("ViewImage", "Photo", new { id = Model.Id })" alt="@Model.Title" width="400" />
+<p>@Model.Description</p>
+<a href="@Url.Action("Gallery")" class="link">Back to Gallery</a>

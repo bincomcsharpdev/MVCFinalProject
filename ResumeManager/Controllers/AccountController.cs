@@ -13,6 +13,13 @@ namespace ResumeManager.Controllers
             _authService = authService;
         }
 
+        [HttpGet]
+        public IActionResult Register()
+        {
+            return View();
+        }
+
+
         [HttpPost]
         public async Task<IActionResult> Register(RegisterRequestDto request)
         {
@@ -25,6 +32,13 @@ namespace ResumeManager.Controllers
 
             return RedirectToAction("Login");
         }
+
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View();
+        }
+
 
         [HttpPost]
         public async Task<IActionResult> Login(LoginRequestDto request)
@@ -39,6 +53,14 @@ namespace ResumeManager.Controllers
             HttpContext.Session.SetString("JwtToken", token);
 
             return RedirectToAction("Index", "Home");
+        }
+
+        [HttpPost]
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Remove("JwtToken");
+
+            return RedirectToAction("Register");
         }
     }
 }

@@ -1,3 +1,5 @@
+using ResumeManager.Implementation;
+
 namespace ResumeManager
 {
     public class Program
@@ -9,6 +11,9 @@ namespace ResumeManager
             // Add services to the container.
             builder.Services.AddControllersWithViews();
             builder.Services.AddHttpClient();
+            builder.Services.AddScoped<AuthService>();
+            builder.Services.AddScoped<PhotoService>();
+            builder.Services.AddScoped<TaxService>();
 
 
             var app = builder.Build();
@@ -30,7 +35,7 @@ namespace ResumeManager
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Account}/{action=Register}/{id?}");
 
             app.Run();
         }
