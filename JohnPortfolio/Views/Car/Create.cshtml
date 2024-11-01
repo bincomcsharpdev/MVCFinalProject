@@ -1,0 +1,27 @@
+﻿@model JohnPortfolio.Models.CreateCarDTO
+
+<h2>Create Car</h2>
+
+<form asp-action="Create" enctype="multipart/form-data" method="post">
+    <div class="form-group">
+        <label asp-for="Manufacturer"></label>
+        <input asp-for="Manufacturer" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Model"></label>
+        <input asp-for="Model" class="form-control" />
+    </div>
+    
+    <div class="form-group">
+        <label asp-for="Year"></label>
+        <input asp-for="Year" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="imageFile">Upload Image</label>
+        <input type="file" class="form-control-file" name="imageFile" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>

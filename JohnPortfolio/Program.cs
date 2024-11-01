@@ -1,3 +1,8 @@
+using JohnPortfolio.Data;
+using JohnPortfolio.Interfaces;
+using JohnPortfolio.Repositories;
+using Microsoft.EntityFrameworkCore;
+
 namespace JohnPortfolio
 {
     public class Program
@@ -6,6 +11,12 @@ namespace JohnPortfolio
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            builder.Services.AddDbContextPool<BincomDb>(options =>
+            {
+                options.UseSqlServer(builder.Configuration.GetValue<string>("ConnectionStrings:Default"), sqlOptions => sqlOptions.CommandTimeout(120));
+            });
+
+            builder.Services.AddScoped<ICarRepository, CarRepository>();
             // Add services to the container to pipeline.
             builder.Services.AddControllersWithViews();
 
@@ -28,7 +39,7 @@ namespace JohnPortfolio
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Car}/{action=Index}/{id?}");
 
             app.Run();
         }
