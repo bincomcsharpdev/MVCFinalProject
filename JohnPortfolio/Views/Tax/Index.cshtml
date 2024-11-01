@@ -1,0 +1,42 @@
+﻿@model TaxCalculation
+@{
+    ViewData["Title"] = "Tax Calculator";
+}
+
+<h2>Tax Calculator</h2>
+
+<form asp-action="Index" method="post">
+    <div class="form-group">
+        <label for="MonthlyBasic">Monthly Basic Salary</label>
+        <input asp-for="MonthlyBasic" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label for="HousingAllowance">Housing Allowance</label>
+        <input asp-for="HousingAllowance" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label for="TransportAllowance">Transport Allowance</label>
+        <input asp-for="TransportAllowance" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label for="OtherAllowance">Other Allowance</label>
+        <input asp-for="OtherAllowance" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label for="PensionRate">Pension Rate (%)</label>
+        <input asp-for="PensionRate" class="form-control" value="8" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Calculate</button>
+</form>
+
+@if (Model != null && Model.TaxAmount > 0)
+{
+    <h3>Your Calculated Tax: @Model.TaxAmount</h3>
+}
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

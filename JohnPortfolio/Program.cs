@@ -1,6 +1,7 @@
 using JohnPortfolio.Data;
 using JohnPortfolio.Interfaces;
 using JohnPortfolio.Repositories;
+using JohnPortfolio.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace JohnPortfolio
@@ -17,6 +18,7 @@ namespace JohnPortfolio
             });
 
             builder.Services.AddScoped<ICarRepository, CarRepository>();
+            builder.Services.AddScoped<ITaxCalculatorService, TaxCalculatorService>();
             // Add services to the container to pipeline.
             builder.Services.AddControllersWithViews();
 
