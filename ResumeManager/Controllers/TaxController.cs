@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using ResumeManager.Implementation;
 using ResumeManager.Models;
 
 namespace ResumeManager.Controllers
 {
+    [Authorize]
     public class TaxController : Controller
     {
         private readonly TaxService _taxService;

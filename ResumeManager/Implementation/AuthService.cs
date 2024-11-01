@@ -14,22 +14,22 @@ namespace ResumeManager.Implementation
             _httpClient.BaseAddress = new Uri("https://anthoniaresumemangerwebapi-f0ccb0argmfgdzgt.canadacentral-01.azurewebsites.net/api/Auth/");
         }
 
-        public async Task<bool> RegisterAsync(RegisterRequestDto request)
+        public async Task<bool> RegisterAsync(AccountViewModel request)
         {
-            var content = new StringContent(JsonSerializer.Serialize(request), Encoding.UTF8, "application/json");
+            var content = new StringContent(JsonSerializer.Serialize(request.RegisterRequest), Encoding.UTF8, "application/json");
             var response = await _httpClient.PostAsync("register", content);
             return response.IsSuccessStatusCode;
         }
 
-        public async Task<string?> LoginAsync(LoginRequestDto request)
+        public async Task<string?> LoginAsync(AccountViewModel request)
         {
-            var content = new StringContent(JsonSerializer.Serialize(request), Encoding.UTF8, "application/json");
+            var content = new StringContent(JsonSerializer.Serialize(request.LoginRequest), Encoding.UTF8, "application/json");
             var response = await _httpClient.PostAsync("login", content);
             if (!response.IsSuccessStatusCode) return null;
 
             var json = await response.Content.ReadAsStringAsync();
             var result = JsonSerializer.Deserialize<Dictionary<string, string>>(json);
-            return result?["Token"];
+            return result?["token"];
         }
     }
 }

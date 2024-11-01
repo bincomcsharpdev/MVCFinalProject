@@ -16,12 +16,16 @@ namespace ResumeManager.Controllers
         [HttpGet]
         public IActionResult Register()
         {
-            return View();
+            var model = new AccountViewModel
+            {
+                RegisterRequest = new RegisterRequestDto()  
+            };
+            return View(model);
         }
 
 
         [HttpPost]
-        public async Task<IActionResult> Register(RegisterRequestDto request)
+        public async Task<IActionResult> Register(AccountViewModel request)
         {
             var result = await _authService.RegisterAsync(request);
             if (!result)
@@ -36,12 +40,16 @@ namespace ResumeManager.Controllers
         [HttpGet]
         public IActionResult Login()
         {
-            return View();
+            var model = new AccountViewModel
+            {
+                LoginRequest = new LoginRequestDto()  
+            };
+            return View(model);
         }
 
 
         [HttpPost]
-        public async Task<IActionResult> Login(LoginRequestDto request)
+        public async Task<IActionResult> Login(AccountViewModel request)
         {
             var token = await _authService.LoginAsync(request);
             if (token == null)
