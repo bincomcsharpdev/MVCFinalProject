@@ -4,8 +4,8 @@ namespace ResumeMangerWebApi.Data.Repository.Interfaces
 {
     public interface IUserRepository
     {
-        Task<User> GetByUsernameAsync(string username);
-        Task AddUserAsync(User user);
-        Task<User> GetByIdAsync(int id);
+        Task<Anthonia_User> GetByUsernameAsync(string username);
+        Task AddUserAsync(Anthonia_User user);
+        Task<Anthonia_User> GetByIdAsync(int id);
     }
 }

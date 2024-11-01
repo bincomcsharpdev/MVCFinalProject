@@ -4,6 +4,6 @@ namespace ResumeMangerWebApi.Implementation.Interfaces
 {
     public interface ITokenService
     {
-        string GenerateToken(User user);
+        string GenerateToken(Anthonia_User user);
     }
 }

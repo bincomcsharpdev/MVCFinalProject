@@ -11,7 +11,7 @@ namespace ResumeMangerWebApi.Implementation.Services
     {
         private readonly IConfiguration _config = config;
 
-        public string GenerateToken(User user)
+        public string GenerateToken(Anthonia_User user)
         {
             var claims = new[]
             {

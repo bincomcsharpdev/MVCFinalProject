@@ -19,7 +19,7 @@ namespace ResumeMangerWebApi.Implementation.Services
             if (existingUser != null)
                 return false;
 
-            var user = new User
+            var user = new Anthonia_User
             {
                 Username = request.Username,
                 PasswordHash = HashPassword(request.Password)

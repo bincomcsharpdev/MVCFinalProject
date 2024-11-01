@@ -13,20 +13,20 @@ namespace ResumeMangerWebApi.Data.Repository.Repository
             _context = context;
         }
 
-        public async Task<User> GetByUsernameAsync(string username)
+        public async Task<Anthonia_User> GetByUsernameAsync(string username)
         {
-            return await _context.Users.FirstOrDefaultAsync(u => u.Username == username);
+            return await _context.Anthonia_Users.FirstOrDefaultAsync(u => u.Username == username);
         }
 
-        public async Task AddUserAsync(User user)
+        public async Task AddUserAsync(Anthonia_User user)
         {
-            _context.Users.Add(user);
+            _context.Anthonia_Users.Add(user);
             await _context.SaveChangesAsync();
         }
 
-        public async Task<User> GetByIdAsync(int id)
+        public async Task<Anthonia_User> GetByIdAsync(int id)
         {
-            return await _context.Users.FindAsync(id);
+            return await _context.Anthonia_Users.FindAsync(id);
         }
     }
 }

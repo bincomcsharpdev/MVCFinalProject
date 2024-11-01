@@ -1,6 +1,6 @@
 ﻿namespace ResumeMangerWebApi.Entities
 {
-    public class User
+    public class Anthonia_User
     {
         public int Id { get; set; }
         public string Username { get; set; }

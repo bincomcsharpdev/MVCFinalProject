@@ -10,37 +10,37 @@ namespace ResumeMangerWebApi.Data.Repository.Repository
 
         public async Task DeletePhoto(int id)
         {
-            var photo = await _context.Anthonia_Photos.FindAsync(id);
+            var photo = await _context.Anthonia_Photohs.FindAsync(id);
             if (photo != null)
             {
-                _context.Anthonia_Photos.Remove(photo);
+                _context.Anthonia_Photohs.Remove(photo);
                 await _context.SaveChangesAsync();
             }
         }
 
-        public async Task<Anthonia_Photo> GetPhotoById(int id)
+        public async Task<Anthonia_Photoh> GetPhotoById(int id)
         {
-            return await _context.Anthonia_Photos.FindAsync(id);
+            return await _context.Anthonia_Photohs.FindAsync(id);
         }
 
-        public async Task<IEnumerable<Anthonia_Photo>> GetPhotos(int page, int pageSize)
+        public async Task<IEnumerable<Anthonia_Photoh>> GetPhotos(int page, int pageSize)
         {
-            return await _context.Anthonia_Photos
+            return await _context.Anthonia_Photohs
                  .OrderBy(p => p.Id)
                  .Skip((page - 1) * pageSize)
                  .Take(pageSize)
                  .ToListAsync();
         }
 
-        public async Task UpdatePhoto(Anthonia_Photo photo)
+        public async Task UpdatePhoto(Anthonia_Photoh photo)
         {
-            _context.Anthonia_Photos.Update(photo);
+            _context.Anthonia_Photohs.Update(photo);
             await _context.SaveChangesAsync();
         }
 
-        public async Task UploadPhoto(Anthonia_Photo photo)
+        public async Task UploadPhoto(Anthonia_Photoh photo)
         {
-            await _context.Anthonia_Photos.AddAsync(photo);
+            await _context.Anthonia_Photohs.AddAsync(photo);
             await _context.SaveChangesAsync();
         }
     }

@@ -29,7 +29,7 @@ public class PhotoController : ControllerBase
     }
 
     [HttpPut("update_photo/{id}")]
-    public async Task<IActionResult> UpdatePhotoDetails(int id, [FromBody] Anthonia_Photo updatePhoto)
+    public async Task<IActionResult> UpdatePhotoDetails(int id, [FromBody] Anthonia_Photoh updatePhoto)
     {
         var photo = await _photoService.GetPhotoById(id);
         if (photo == null)

@@ -14,17 +14,17 @@ namespace ResumeMangerWebApi.Implementation.Services
             await _photoRepository.DeletePhoto(id);
         }
 
-        public async Task<IEnumerable<Anthonia_Photo>> GetAllPhotos(int page, int pageSize)
+        public async Task<IEnumerable<Anthonia_Photoh>> GetAllPhotos(int page, int pageSize)
         {
             return await _photoRepository.GetPhotos(page, pageSize);
         }
 
-        public async Task<Anthonia_Photo> GetPhotoById(int id)
+        public async Task<Anthonia_Photoh> GetPhotoById(int id)
         {
             return await _photoRepository.GetPhotoById(id);
         }
 
-        public async Task UpdatePhoto(int id, Anthonia_Photo updatedPhoto)
+        public async Task UpdatePhoto(int id, Anthonia_Photoh updatedPhoto)
         {
             var existingPhoto = await _photoRepository.GetPhotoById(id);
             if (existingPhoto != null)
@@ -40,7 +40,7 @@ namespace ResumeMangerWebApi.Implementation.Services
         {
             using var memoryStream = new MemoryStream();
             await upload.File.CopyToAsync(memoryStream);
-            var photo = new Anthonia_Photo
+            var photo = new Anthonia_Photoh
             {
                 Title = upload.Title,
                 Description = upload.Description,

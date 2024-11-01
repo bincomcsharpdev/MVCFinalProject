@@ -6,9 +6,9 @@ namespace ResumeMangerWebApi.Implementation.Interfaces
     public interface IPhotoService
     {
         Task UploadPhoto(PhotoUploadDto upload);
-        Task<Anthonia_Photo> GetPhotoById(int id);
-        Task<IEnumerable<Anthonia_Photo>> GetAllPhotos(int page, int pageSize);
-        Task UpdatePhoto(int id, Anthonia_Photo updatedPhoto);
+        Task<Anthonia_Photoh> GetPhotoById(int id);
+        Task<IEnumerable<Anthonia_Photoh>> GetAllPhotos(int page, int pageSize);
+        Task UpdatePhoto(int id, Anthonia_Photoh updatedPhoto);
         Task DeletePhoto(int id);
     }
 }

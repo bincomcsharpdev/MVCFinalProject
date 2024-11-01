@@ -23,7 +23,8 @@ namespace ResumeMangerWebApi
                     .AddScoped<IPhotoService, PhotoService>()
                     .AddScoped<IUserRepository, UserRepository>()
                     .AddScoped<ITokenService, TokenService>()
-                    .AddScoped<IUserService, UserService>();
+                    .AddScoped<IUserService, UserService>()
+                    .AddScoped<Calculator>();
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                     .AddJwtBearer(options =>
