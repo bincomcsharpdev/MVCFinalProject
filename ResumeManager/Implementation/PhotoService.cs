@@ -7,7 +7,7 @@ public class PhotoService
     public PhotoService(HttpClient httpClient)
     {
         _httpClient = httpClient;
-        _httpClient.BaseAddress = new Uri("https://yourapiurl.com/api/Photo/");
+        _httpClient.BaseAddress = new Uri("https://anthoniaresumemangerwebapi-f0ccb0argmfgdzgt.canadacentral-01.azurewebsites.net/api/photo/");
     }
 
     public async Task<bool> UploadPhotoAsync(PhotoUploadDto upload)

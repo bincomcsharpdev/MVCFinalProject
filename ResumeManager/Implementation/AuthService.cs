@@ -11,7 +11,7 @@ namespace ResumeManager.Implementation
         public AuthService(HttpClient httpClient)
         {
             _httpClient = httpClient;
-            _httpClient.BaseAddress = new Uri("https://yourapiurl.com/api/Auth/");
+            _httpClient.BaseAddress = new Uri("https://anthoniaresumemangerwebapi-f0ccb0argmfgdzgt.canadacentral-01.azurewebsites.net/api/Auth/");
         }
 
         public async Task<bool> RegisterAsync(RegisterRequestDto request)

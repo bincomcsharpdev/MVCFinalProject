@@ -11,7 +11,7 @@ namespace ResumeManager.Implementation
         public TaxService(HttpClient httpClient)
         {
             _httpClient = httpClient;
-            _httpClient.BaseAddress = new Uri("https://yourapiurl.com/api/Tax/");
+            _httpClient.BaseAddress = new Uri("https://anthoniaresumemangerwebapi-f0ccb0argmfgdzgt.canadacentral-01.azurewebsites.net/api/Tax/");
         }
 
         public async Task<Anthonia_PAYEDto?> CalculatePAYEAsync(Anthonia_PAYEDto model)
