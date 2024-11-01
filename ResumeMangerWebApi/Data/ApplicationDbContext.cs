@@ -11,5 +11,6 @@ namespace ResumeMangerWebApi.Data
         }
 
         public DbSet<Anthonia_Photo> Anthonia_Photos { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

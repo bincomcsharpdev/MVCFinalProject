@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ResumeMangerWebApi.Entities;
 using ResumeMangerWebApi.Implementation.Interfaces;
-using ResumeMangerWebApi.Model;
+using ResumeMangerWebApi.DTO;
+using Microsoft.AspNetCore.Authorization;
 
 [Route("api/[controller]")]
 [ApiController]
+[Authorize]
 public class PhotoController : ControllerBase
 {
     private readonly IPhotoService _photoService;
@@ -15,7 +17,7 @@ public class PhotoController : ControllerBase
     }
 
     [HttpPost("upload")]
-    public async Task<IActionResult> UploadPhoto([FromForm] PhotoUpload upload)
+    public async Task<IActionResult> UploadPhoto([FromForm] PhotoUploadDto upload)
     {
         if (upload.File == null || upload.File.Length == 0)
         {

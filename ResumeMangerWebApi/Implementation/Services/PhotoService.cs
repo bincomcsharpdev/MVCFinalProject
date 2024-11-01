@@ -1,7 +1,7 @@
 ﻿using ResumeMangerWebApi.Data.Repository.Interfaces;
 using ResumeMangerWebApi.Entities;
 using ResumeMangerWebApi.Implementation.Interfaces;
-using ResumeMangerWebApi.Model;
+using ResumeMangerWebApi.DTO;
 
 namespace ResumeMangerWebApi.Implementation.Services
 {
@@ -36,7 +36,7 @@ namespace ResumeMangerWebApi.Implementation.Services
             }
         }
 
-        public async Task UploadPhoto(PhotoUpload upload)
+        public async Task UploadPhoto(PhotoUploadDto upload)
         {
             using var memoryStream = new MemoryStream();
             await upload.File.CopyToAsync(memoryStream);

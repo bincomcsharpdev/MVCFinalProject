@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ResumeMangerWebApi.Model
+namespace ResumeMangerWebApi.DTO
 {
-    public class PhotoUpload
+    public class PhotoUploadDto
     {
         [Required(ErrorMessage = "File is required.")]
         public IFormFile File { get; set; }

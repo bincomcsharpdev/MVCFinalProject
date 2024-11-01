@@ -1,8 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using ResumeMangerWebApi.DTO;
 using ResumeMangerWebApi.Implementation.Interfaces;
 
 [Route("api/[controller]")]
 [ApiController]
+[Authorize]
 public class TaxController : ControllerBase
 {
     private readonly ITaxService _taxService;
@@ -13,7 +16,7 @@ public class TaxController : ControllerBase
     }
 
     [HttpPost("calculate-paye")]
-    public IActionResult CalculatePAYE([FromBody] Anthonia_PAYE model)
+    public IActionResult CalculatePAYE([FromBody] Anthonia_PAYEDto model)
     {
         if (model == null || model.Income <= 0)
         {
