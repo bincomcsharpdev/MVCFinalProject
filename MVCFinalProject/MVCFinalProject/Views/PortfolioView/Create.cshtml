@@ -1,0 +1,7 @@
+﻿@model MVCFinalProject.Models.DTOs.PortfolioItemDto
+
+<h2>@(Model.Id == Guid.Empty ? "Create Portfolio Item" : "Edit Portfolio Item")</h2>
+
+@{
+    Html.RenderPartial("_PortfolioForm", Model);
+}

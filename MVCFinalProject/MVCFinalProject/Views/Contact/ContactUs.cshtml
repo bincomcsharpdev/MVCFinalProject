@@ -1,0 +1,33 @@
+﻿@model MVCFinalProject.Models.DTOs.ContactDto
+
+@{
+    ViewData["Title"] = "Contact Us";
+}
+
+<h1>Contact Us</h1>
+
+<form method="post" action="/Contact/SendContactEmail">
+    <div>
+        <label for="email">Your Email:</label><br />
+        <input type="email" id="email" name="Email" required />
+    </div>
+
+    <div>
+        <label for="subject">Subject:</label><br />
+        <input type="text" id="subject" name="Subject" required />
+    </div>
+
+    <div>
+        <label for="message">Message:</label><br />
+        <textarea id="message" name="Message" rows="5" required></textarea>
+    </div>
+
+    <button type="submit">Send Message</button>
+</form>
+
+@if (TempData["SuccessMessage"] != null)
+{
+        <div class="success">
+            <p>@TempData["SuccessMessage"]</p>
+        </div>
+}

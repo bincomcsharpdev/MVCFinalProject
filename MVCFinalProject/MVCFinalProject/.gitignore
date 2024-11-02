@@ -1,0 +1,65 @@
+# Configuration files
+appsettings.json
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Mono auto-generated crash logs
+mono_crash.*
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio working directory
+.vs/
+
+# Rider and VS Code directories
+.idea/
+.vscode/
+.history/
+.ionide/
+
+# OS-generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Virtual machine files
+*.vdi
+*.vbox
+*.vbox-prev
+
+# Local environment variables and secrets
+.env.local
+*.env
+
+# Node.js dependencies and logs
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# JetBrains Rider project files
+*.sln.iml
+
+# macOS files
+.DS_Store
+.Spotlight-V100
+.Trashes
