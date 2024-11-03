@@ -1,0 +1,39 @@
+﻿@model List<FinalAssProject.Models.Gallery>
+
+@{
+    ViewData["Title"] = "Gallery";
+}
+
+<h2>Image Gallery</h2>
+
+<div>
+    <a asp-action="Upload" class="btn btn-primary">Upload New Image</a>
+</div>
+
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Image</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Title</td>
+                <td>@item.Description</td>
+                <td>
+                    <img src="data:@item.ImageMimeType;base64,@(Convert.ToBase64String(item.ImageData))" alt="@item.Title" width="500" />
+                </td>
+                <td>
+                    <form asp-action="DeleteImage" method="post" asp-route-id="@item.Id" onsubmit="return confirm('Are you sure you want to delete this image?');">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

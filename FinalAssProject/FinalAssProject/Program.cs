@@ -1,7 +1,25 @@
+using FinalAssProject.Data;
+using FinalAssProject.Interfaces;
+using FinalAssProject.Repositories;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Default"),
+    sqlServerOptionsAction: sqlOptions =>
+    {
+        sqlOptions.EnableRetryOnFailure(
+            maxRetryCount: 5,         // Number of retry attempts
+            maxRetryDelay: TimeSpan.FromSeconds(30),  // Delay between retries
+            errorNumbersToAdd: null    // Specific error numbers (optional)
+        );
+    }));
+
+builder.Services.AddScoped<IGalleryService, GalleryService>();
 
 var app = builder.Build();
 
