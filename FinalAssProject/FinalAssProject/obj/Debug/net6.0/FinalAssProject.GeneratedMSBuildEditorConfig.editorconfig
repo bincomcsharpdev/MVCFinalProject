@@ -18,12 +18,20 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\tibel\OneDrive\Desktop\Github\MVCFinalProject\FinalAssProject\FinalAssProject
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/tibel/OneDrive/Desktop/Github/MVCFinalProject/FinalAssProject/FinalAssProject/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[C:/Users/tibel/OneDrive/Desktop/Github/MVCFinalProject/FinalAssProject/FinalAssProject/Views/AboutMe/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRNZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tibel/OneDrive/Desktop/Github/MVCFinalProject/FinalAssProject/FinalAssProject/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[C:/Users/tibel/OneDrive/Desktop/Github/MVCFinalProject/FinalAssProject/FinalAssProject/Views/AboutMe/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRNZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tibel/OneDrive/Desktop/Github/MVCFinalProject/FinalAssProject/FinalAssProject/Views/Contact/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tibel/OneDrive/Desktop/Github/MVCFinalProject/FinalAssProject/FinalAssProject/Views/Contact/ThankYou.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxUaGFua1lvdS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/tibel/OneDrive/Desktop/Github/MVCFinalProject/FinalAssProject/FinalAssProject/Views/Image/Index.cshtml]
@@ -32,6 +40,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/tibel/OneDrive/Desktop/Github/MVCFinalProject/FinalAssProject/FinalAssProject/Views/Image/Upload.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW1hZ2VcVXBsb2FkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tibel/OneDrive/Desktop/Github/MVCFinalProject/FinalAssProject/FinalAssProject/Views/Portfolio/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9ydGZvbGlvXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tibel/OneDrive/Desktop/Github/MVCFinalProject/FinalAssProject/FinalAssProject/Views/Portfolio/Upload.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9ydGZvbGlvXFVwbG9hZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/tibel/OneDrive/Desktop/Github/MVCFinalProject/FinalAssProject/FinalAssProject/Views/Shared/Error.cshtml]

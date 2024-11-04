@@ -10,5 +10,7 @@ namespace FinalAssProject.Data
             
         }
         public DbSet<Gallery> Ken_Galleries { get; set; }
+        public DbSet<PortfolioItem> Ken_Portolios { get; set; }
+        public DbSet<AboutMe> Ken_AboutMe { get; set; }
     }
 }

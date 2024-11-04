@@ -1,5 +1,6 @@
 using FinalAssProject.Data;
 using FinalAssProject.Interfaces;
+using FinalAssProject.Models;
 using FinalAssProject.Repositories;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("Default"),
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Dbcon"),
     sqlServerOptionsAction: sqlOptions =>
     {
         sqlOptions.EnableRetryOnFailure(
@@ -20,6 +21,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     }));
 
 builder.Services.AddScoped<IGalleryService, GalleryService>();
+builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
 
 var app = builder.Build();
 
@@ -40,6 +43,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=AboutMe}/{action=Index}/{id?}");
 
 app.Run();
